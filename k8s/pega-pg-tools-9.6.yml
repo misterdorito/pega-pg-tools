@@ -17,6 +17,7 @@ spec:
       containers:
         - name: postgresql-tools
           image: primedorito/pega_pg_tools:9.6
+          imagePullPolicy: Always 
           envFrom:
             - configMapRef:
                 name: pega-environment-config
@@ -30,7 +31,6 @@ spec:
           volumeMounts:
             - mountPath: /credentials
               name: credentials
-          imagePullPolicy: Always        
       volumes:
         - name: credentials
           secret:
