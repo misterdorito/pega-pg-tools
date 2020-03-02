@@ -5,5 +5,5 @@ CMD mkdir -p /scripts
 ENV PATH=/scripts/:$PATH
 
 COPY pega-psql.sh /scripts/
-CMD chmod +x /scripts/pega-psql.sh
+CMD chmod 777 /scripts/pega-psql.sh
 
