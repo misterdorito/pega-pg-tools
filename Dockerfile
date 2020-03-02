@@ -1,5 +1,5 @@
 ARG pg_version
-FROM misterdorito/dorito:${pg_version}
+FROM misterdorito/postgresql-tools:${pg_version}
 
 CMD mkdir -p /scripts
 ENV PATH=/scripts:$PATH
