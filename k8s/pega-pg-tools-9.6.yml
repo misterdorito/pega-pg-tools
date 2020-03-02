@@ -30,6 +30,7 @@ spec:
           volumeMounts:
             - mountPath: /credentials
               name: credentials
+      imagePullPolicy: Always        
       volumes:
         - name: credentials
           secret:
