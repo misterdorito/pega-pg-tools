@@ -6,3 +6,4 @@ ENV PATH=/scripts:$PATH
 
 COPY pega-psql.sh /scripts
 CMD chmod +x /scripts/pega-psql.sh
+
