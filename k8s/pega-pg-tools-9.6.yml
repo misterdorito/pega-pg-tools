@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: postgresql-tools
-          image: primedorito/pega-pg-tools:9.6
+          image: primedorito/pega_pg_tools:9.6
           envFrom:
             - configMapRef:
                 name: pega-environment-config
