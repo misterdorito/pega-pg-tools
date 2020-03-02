@@ -1,5 +1,5 @@
 ARG pg_version
-FROM misterdorito/dorito:${DOCKER_TAG}
+FROM misterdorito/dorito:${pg_version}
 
 CMD mkdir -p /scripts
 ENV PATH=/scripts:$PATH
