@@ -7,3 +7,4 @@ ENV PATH=/scripts:$PATH
 COPY pega-psql.sh /scripts/
 RUN chmod +x /scripts/pega-psql.sh
 
+ENTRYPOINT ["tail", "-f", "/dev/null"]
