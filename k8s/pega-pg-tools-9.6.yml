@@ -29,10 +29,26 @@ spec:
               cpu: 1
               memory: 1Gi
           volumeMounts:
+            - mountPath: /data
+              name: datadir
             - mountPath: /credentials
               name: credentials
       volumes:
+        - name: datadir
+          persistentVolumeClaim:
+            claimName: datadir
         - name: credentials
           secret:
             secretName: pega-credentials-secret
             defaultMode: 420
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: datadir
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
