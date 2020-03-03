@@ -1,7 +1,6 @@
 #!/bin/bash
 export DB_HOST=$(echo $JDBC_URL | cut -d: -f3 | cut -d/ -f3)
 export DB_NAME=$(echo $JDBC_URL | cut -d/ -f4)
-export DB_PORT=$(echo $JDBC_URL | cut -d: -f3)
 export DB_PORT=$(echo $JDBC_URL | cut -d: -f4 | cut -d/ -f1)
 export DB_USERNAME=$(cat /credentials/DB_USERNAME)
 export DB_PASSWORD=$(cat /credentials/DB_PASSWORD)
