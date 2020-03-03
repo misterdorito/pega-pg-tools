@@ -1,6 +1,8 @@
 # pega-pg-tools
 A postgresql-tools variant with a few convenience features for folks working with [pega-helm-charts](https://github.com/pegasystems/pega-helm-charts). 
 
+Everything is the remainder of this readme assumes that kubectl is installed, on the user's path and configured correctly to connect to your cluster.
+
 Docker images available at https://hub.docker.com/repository/docker/primedorito/pega_pg_tools.
 
 ## Deploying container to a k8s cluster
@@ -21,7 +23,6 @@ postgresql-tools-65876f6cbb-j56gm
 >kubectl -n [namespace] exec -it postgresql-tools-65876f6cbb-j56gm /bin/bash
 root@postgresql-tools-65876f6cbb-j56gm:/# pega-psql.sh
 psql (9.6.16, server 9.6.11)
-SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
 Type "help" for help.
 
 dbname=> \dn
