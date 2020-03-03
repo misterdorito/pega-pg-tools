@@ -1,7 +1,7 @@
 # pega-pg-tools
 A postgresql-tools variant with a few convenience features for folks working with [pega-helm-charts](https://github.com/pegasystems/pega-helm-charts). 
 
-Everything is the remainder of this readme assumes that kubectl is installed, on the user's path and configured correctly to connect to your cluster.
+Everything is the remainder of this readme assumes that kubectl is installed, on the user's path and configured correctly to connect to your cluster.  It is also expected that you will be deploying this container into the same namespace as your pega-helm-chart deployment.
 
 Docker images available at https://hub.docker.com/repository/docker/primedorito/pega_pg_tools.
 
