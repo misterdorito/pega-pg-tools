@@ -15,9 +15,27 @@ kubectl -n [namespace] apply -f https://raw.githubusercontent.com/misterdorito/p
 ## Using container to query a Postgresql DB:
 To query a db:
 ```
-pega-psql.sh
+>kubectl -n [namespace] get pods -l app=postgresql-tools -o custom-columns=CONTAINER:.metadata.name --no-headers=true
+postgresql-tools-65876f6cbb-j56gm
+
+>kubectl -n [namespace] exec -it postgresql-tools-65876f6cbb-j56gm /bin/bash
+root@postgresql-tools-65876f6cbb-j56gm:/# pega-psql.sh
+psql (9.6.16, server 9.6.11)
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+dbname=> \dn
+     List of schemas
+     Name      |  Owner
+---------------+----------
+ data          | dbuser
+ rules         | dbuser
+ public        | dbuser
+(3 rows)
+
+dbname=>
 ```
-This script is on the user's path.
+The pega-psql.sh script is on the user's path.
 
 ## To undeploy container
 To remove the container once you're done with it:
